@@ -23,7 +23,7 @@ class UserManagementView extends GetView<UserManagementController> {
           itemBuilder: (context, index) {
             final user = controller.users[index];
             return ListTile(
-              title: Text(user.fullName),
+              title: Text(user.fullName ?? user.name),
               subtitle: Text(user.email),
               trailing: IconButton(
                 icon: const Icon(Icons.delete, color: Colors.red),

@@ -1,8 +1,6 @@
-import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'meeting_room_controller.dart';
 
 const String tempAgoraAppId = "YOUR_AGORA_APP_ID"; // Placeholder
@@ -43,14 +41,14 @@ class MeetingRoomView extends GetView<MeetingRoomController> {
             return GestureDetector(
               onTap: () {
                 if (controller.isHost.value && participant.userId != FirebaseAuth.instance.currentUser?.uid) {
-                  controller.showParticipantControls(participant);
+                  controller.showParticipantControls(participant.agoraUid);
                 }
               },
               child: Container(
                 color: Colors.grey[300],
                 child: Center(
                   child: Obx(() {
-                    final isMuted = controller.remoteMutedStatus[uid] ?? false;
+                    final isMuted = controller.remoteMutedStatus[participant.agoraUid] ?? false;
                     return Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

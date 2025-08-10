@@ -17,13 +17,13 @@ class HomeView extends GetView<HomeController> {
             if (controller.user.value?.role == UserRole.admin) {
               return IconButton(
                 icon: const Icon(Icons.people),
-                onPressed: () => Get.toNamed(Routes.MANAGE_MEMBERS),
+                onPressed: () => Get.toNamed(Routes.manageMembers),
               );
             }
             if (controller.user.value?.role == UserRole.member) {
               return IconButton(
                 icon: const Icon(Icons.group_add),
-                onPressed: () => Get.toNamed(Routes.MANAGE_USERS),
+                onPressed: () => Get.toNamed(Routes.manageUsers),
               );
             }
             return const SizedBox.shrink();
@@ -37,12 +37,12 @@ class HomeView extends GetView<HomeController> {
             const Text('Welcome! This is the home screen.'),
             const SizedBox(height: 40),
             ElevatedButton(
-              onPressed: () => Get.toNamed(Routes.CREATE_MEETING),
+              onPressed: () => Get.toNamed(Routes.createMeeting),
               child: const Text('Host a Meeting'),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () => Get.toNamed(Routes.JOIN_MEETING),
+              onPressed: () => Get.toNamed(Routes.joinMeeting),
               child: const Text('Join a Meeting'),
             ),
           ],

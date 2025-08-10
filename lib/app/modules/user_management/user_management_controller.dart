@@ -108,12 +108,15 @@ class UserManagementController extends GetxController {
 
       final userModel = UserModel(
         id: newUser.uid,
-        fullName: fullName,
+        name: fullName,
         email: email,
         role: UserRole.user,
+        fullName: fullName,
         memberCode: currentMember!.memberCode, // Use member's code
         createdBy: currentMember!.id,
         planExpiryDate: currentMember!.planExpiryDate, // Use member's expiry
+        createdAt: DateTime.now(),
+        updatedAt: DateTime.now(),
       );
 
       await _firestore.collection('users').doc(newUser.uid).set(userModel.toJson());

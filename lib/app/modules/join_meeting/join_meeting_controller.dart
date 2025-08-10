@@ -41,7 +41,7 @@ class JoinMeetingController extends GetxController {
       }
 
       // Navigate to the meeting room
-      Get.toNamed(Routes.MEETING_ROOM, arguments: meeting);
+      Get.toNamed(Routes.meetingRoom, arguments: meeting);
 
 
     } catch (e) {

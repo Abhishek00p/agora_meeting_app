@@ -6,7 +6,6 @@ An **Audio Call Meeting App** built using **Flutter**, **GetX**, and **Agora SDK
 The app supports multiple user roles and provides secure, role-based access for hosting and joining audio-only meetings with specific meeting rules and restrictions.
 
 ---
-
 ## User Roles
 1. **Admin**  
    - Can register new members.  

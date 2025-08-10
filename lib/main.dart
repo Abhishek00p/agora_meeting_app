@@ -1,4 +1,4 @@
-import 'package:audio_call_meeting_app/app/utils/app_theme.dart';
+import 'package:agora_meeting_room/app/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      initialRoute: Routes.LOGIN,
+      initialRoute: Routes.login,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
     );

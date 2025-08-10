@@ -18,37 +18,37 @@ import 'app_routes.dart';
 class AppPages {
   static final routes = [
     GetPage(
-      name: Routes.LOGIN,
+      name: Routes.login,
       page: () => const LoginView(),
       binding: LoginBinding(),
     ),
     GetPage(
-      name: Routes.HOME,
+      name: Routes.home,
       page: () => const HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
-      name: Routes.CREATE_MEETING,
+      name: Routes.createMeeting,
       page: () => const CreateMeetingView(),
       binding: CreateMeetingBinding(),
     ),
     GetPage(
-      name: Routes.JOIN_MEETING,
+      name: Routes.joinMeeting,
       page: () => const JoinMeetingView(),
       binding: JoinMeetingBinding(),
     ),
     GetPage(
-      name: Routes.MEETING_ROOM,
+      name: Routes.meetingRoom,
       page: () => const MeetingRoomView(),
       binding: MeetingRoomBinding(),
     ),
     GetPage(
-      name: Routes.MANAGE_MEMBERS,
+      name: Routes.manageMembers,
       page: () => const MemberManagementView(),
       binding: MemberManagementBinding(),
     ),
     GetPage(
-      name: Routes.MANAGE_USERS,
+      name: Routes.manageUsers,
       page: () => const UserManagementView(),
       binding: UserManagementBinding(),
     ),

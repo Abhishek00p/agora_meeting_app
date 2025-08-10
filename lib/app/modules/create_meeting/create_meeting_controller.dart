@@ -54,7 +54,7 @@ class CreateMeetingController extends GetxController {
       final newMeetingDoc = await docRef.get();
       final createdMeeting = MeetingModel.fromDocument(newMeetingDoc);
 
-      Get.offAndToNamed(Routes.MEETING_ROOM, arguments: createdMeeting);
+      Get.offAndToNamed(Routes.meetingRoom, arguments: createdMeeting);
 
     } catch (e) {
       Get.snackbar('Error', 'Failed to create meeting: ${e.toString()}');

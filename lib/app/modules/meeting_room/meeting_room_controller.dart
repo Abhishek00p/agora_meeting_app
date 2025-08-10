@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:agora_meeting_room/app/data/models/meeting_model.dart';
 import 'package:agora_meeting_room/app/data/models/participant_model.dart';
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:agora_meeting_room/app/data/services/firestore_service.dart';
@@ -136,26 +136,7 @@ class MeetingRoomController extends GetxController {
     _engine!.setEnableSpeakerphone(isSpeakerOn.value);
   }
 
-  Future<void> leaveMeeting() async {
-    isLoading.value = true;
-    try {
-      if (isHost.value) {
-        await _firestoreService.updateMeetingStatus(
-          meeting.value!.id,
-          status: MeetingStatus.ended,
-          endTime: DateTime.now(),
-        );
-      }
-      _timer?.cancel();
-      await _engine?.leaveChannel();
-      await _engine?.release();
-    } catch (e) {
-      debugPrint('Error leaving meeting: $e');
-    } finally {
-      _engine = null;
-      Get.back();
-    }
-  }
+
 
   @override
   void onClose() {

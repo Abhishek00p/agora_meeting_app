@@ -139,7 +139,7 @@ class AppTheme {
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(color: errorColor, width: 2),
         ),
-        hintStyle: TextStyle(color: lightSecondaryTextColor.withOpacity(0.7)),
+        hintStyle: TextStyle(color: lightSecondaryTextColor.withValues(alpha: 0.7)),
       ),
       cardTheme: CardThemeData(
         color: lightSurfaceColor,
@@ -283,7 +283,7 @@ class AppTheme {
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(color: errorColor, width: 2),
         ),
-        hintStyle: TextStyle(color: darkSecondaryTextColor.withOpacity(0.7)),
+        hintStyle: TextStyle(color: darkSecondaryTextColor.withValues(alpha: 0.7)),
       ),
       cardTheme: CardThemeData(
         color: darkSurfaceColor,

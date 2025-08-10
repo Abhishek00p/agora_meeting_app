@@ -134,12 +134,15 @@ class MemberManagementController extends GetxController {
       // Now save the user data to Firestore
       final userModel = UserModel(
         id: newMember.uid,
-        fullName: fullName,
+        name: fullName,
         email: email,
         role: UserRole.member,
+        fullName: fullName,
         memberCode: _generateMemberCode(8),
         createdBy: admin.uid,
         planExpiryDate: DateTime.now().add(const Duration(days: 30)), // Example expiry
+        createdAt: DateTime.now(),
+        updatedAt: DateTime.now(),
       );
 
       await _firestore.collection('users').doc(newMember.uid).set(userModel.toJson());

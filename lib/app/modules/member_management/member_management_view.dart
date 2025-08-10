@@ -23,7 +23,7 @@ class MemberManagementView extends GetView<MemberManagementController> {
           itemBuilder: (context, index) {
             final member = controller.members[index];
             return ListTile(
-              title: Text(member.fullName),
+              title: Text(member.fullName ?? member.name),
               subtitle: Text(member.email),
               trailing: IconButton(
                 icon: const Icon(Icons.delete, color: Colors.red),
