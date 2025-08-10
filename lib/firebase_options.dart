@@ -47,28 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'placeholder',
-    appId: '1:1234567890:web:placeholder',
-    messagingSenderId: '1234567890',
-    projectId: 'placeholder-project',
-    authDomain: 'placeholder-project.firebaseapp.com',
-    storageBucket: 'placeholder-project.appspot.com',
+    apiKey: 'AIzaSyA0Bwb7LxaexcPU0296qsMOqimFFNNYdn0',
+    appId: '1:582794690383:web:497231a5ac573e41a18f3a',
+    messagingSenderId: '582794690383',
+    projectId: 'agora-meeting-rrom',
+    authDomain: 'agora-meeting-rrom.firebaseapp.com',
+    storageBucket: 'agora-meeting-rrom.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'placeholder',
-    appId: '1:1234567890:android:placeholder',
-    messagingSenderId: '1234567890',
-    projectId: 'placeholder-project',
-    storageBucket: 'placeholder-project.appspot.com',
+    apiKey: 'AIzaSyCPGQ1Av5RdroFljOPruKuKWtKN1pYUoFI',
+    appId: '1:582794690383:android:29cd50d7cb6d69d6a18f3a',
+    messagingSenderId: '582794690383',
+    projectId: 'agora-meeting-rrom',
+    storageBucket: 'agora-meeting-rrom.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'placeholder',
-    appId: '1:1234567890:ios:placeholder',
-    messagingSenderId: '1234567890',
-    projectId: 'placeholder-project',
-    storageBucket: 'placeholder-project.appspot.com',
+    apiKey: 'AIzaSyDfETU7V5_KNn1qudI2YRIyjpdOy--aHPY',
+    appId: '1:582794690383:ios:45588c29d715de01a18f3a',
+    messagingSenderId: '582794690383',
+    projectId: 'agora-meeting-rrom',
+    storageBucket: 'agora-meeting-rrom.firebasestorage.app',
     iosBundleId: 'com.example.agoraMeetingRoom',
   );
+
 }

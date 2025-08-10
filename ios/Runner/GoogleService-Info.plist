@@ -2,35 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CLIENT_ID</key>
-	<string>placeholder-client-id</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>placeholder-reversed-client-id</string>
 	<key>API_KEY</key>
-	<string>placeholder-api-key</string>
+	<string>AIzaSyDfETU7V5_KNn1qudI2YRIyjpdOy--aHPY</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1234567890</string>
+	<string>582794690383</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.agoraMeetingRoom</string>
 	<key>PROJECT_ID</key>
-	<string>placeholder-project</string>
+	<string>agora-meeting-rrom</string>
 	<key>STORAGE_BUCKET</key>
-	<string>placeholder-project.appspot.com</string>
+	<string>agora-meeting-rrom.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1234567890:ios:placeholder</string>
-	<key>DATABASE_URL</key>
-	<string>https://placeholder.firebaseio.com</string>
+	<string>1:582794690383:ios:45588c29d715de01a18f3a</string>
 </dict>
 </plist>
