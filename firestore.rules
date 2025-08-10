@@ -1,0 +1,75 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper function to get user data
+    function getUserData(userId) {
+      return get(/databases/$(database)/documents/users/$(userId)).data;
+    }
+
+    // Helper function to check if a user is an Admin
+    function isAdmin(userId) {
+      return getUserData(userId).role == 'UserRole.admin';
+    }
+
+    // Helper function to check if a user is a Member
+    function isMember(userId) {
+      return getUserData(userId).role == 'UserRole.member';
+    }
+
+    // Rules for the 'users' collection
+    match /users/{userId} {
+      // Any authenticated user can create their own user document (e.g., on signup)
+      // but they cannot assign themselves a privileged role.
+      allow create: if request.auth != null && request.resource.data.role == 'UserRole.user';
+
+      // Users can read their own data. Admins can read any user data.
+      // Members can read users they created.
+      allow read: if request.auth.uid == userId
+                  || isAdmin(request.auth.uid)
+                  || (isMember(request.auth.uid) && resource.data.createdBy == request.auth.uid);
+
+      // Users can update their own data, but not their role or createdBy fields.
+      // Admins/Members can update users they created.
+      allow update: if (request.auth.uid == userId
+                      && request.resource.data.role == resource.data.role
+                      && request.resource.data.createdBy == resource.data.createdBy)
+                    || (isAdmin(request.auth.uid) && resource.data.createdBy == request.auth.uid)
+                    || (isMember(request.auth.uid) && resource.data.createdBy == request.auth.uid);
+
+      // Only Admins should be able to delete users (for simplicity, deny delete for now)
+      allow delete: if false;
+    }
+
+    // Custom rule for allowing Admins/Members to create other users
+    match /users/{newUserId} {
+        allow create: if (isAdmin(request.auth.uid) && request.resource.data.role == 'UserRole.member')
+                      || (isMember(request.auth.uid) && request.resource.data.role == 'UserRole.user' && request.resource.data.createdBy == request.auth.uid);
+    }
+
+    // Rules for the 'meetings' collection
+    match /meetings/{meetingId} {
+      // Any authenticated user can read meeting details (to join)
+      allow read: if request.auth != null;
+
+      // Only Admins or Members can create meetings
+      allow create: if request.auth != null && (isAdmin(request.auth.uid) || isMember(request.auth.uid));
+
+      // Only the host of the meeting can update it
+      allow update: if request.auth.uid == resource.data.hostId;
+
+      // Only the host can delete it
+      allow delete: if request.auth.uid == resource.data.hostId;
+
+      // Rules for participants subcollection
+      match /participants/{participantId} {
+        // Any authenticated user can join (add themselves)
+        allow create: if request.auth.uid == participantId;
+        // Only the host or the participant themselves can remove from list
+        allow delete: if request.auth.uid == participantId || request.auth.uid == get(/databases/$(database)/documents/meetings/$(meetingId)).data.hostId;
+        allow read: if request.auth != null;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "project_info": {
+    "project_number": "1234567890",
+    "firebase_url": "https://placeholder.firebaseio.com",
+    "project_id": "placeholder-project",
+    "storage_bucket": "placeholder-project.appspot.com"
+  },
+  "client": [],
+  "configuration_version": "1"
+}
