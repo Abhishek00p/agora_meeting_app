@@ -1,10 +1,29 @@
 {
   "project_info": {
-    "project_number": "1234567890",
-    "firebase_url": "https://placeholder.firebaseio.com",
-    "project_id": "placeholder-project",
-    "storage_bucket": "placeholder-project.appspot.com"
+    "project_number": "582794690383",
+    "project_id": "agora-meeting-rrom",
+    "storage_bucket": "agora-meeting-rrom.firebasestorage.app"
   },
-  "client": [],
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582794690383:android:29cd50d7cb6d69d6a18f3a",
+        "android_client_info": {
+          "package_name": "com.example.agora_meeting_room"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPGQ1Av5RdroFljOPruKuKWtKN1pYUoFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
   "configuration_version": "1"
 }
